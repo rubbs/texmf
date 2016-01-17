@@ -1,0 +1,92 @@
+%Briefvorlage für SFG Briefe
+
+\ProvidesFile{sfg-brief.lco}
+
+\LoadLetterOption{DIN}
+
+% neue Deutsche Rechtschreibung: Trennregeln!
+\usepackage[ngerman]{babel}
+
+% verwende Vektorschriften, falls vorhanden
+\usepackage[T1]{fontenc}
+
+% Encodierung der Quelldatei
+% latin1 = ISO 8859-1
+% ansinew = Windows
+% applemac = Apple-Mac
+% utf8 = UTF-8-Encoding
+\usepackage[utf8]{inputenc}
+
+
+% verwendete Schriften
+% Doku: http://www.ctan.org/tex-archive/macros/latex/required/psnfss/psnfss2e.pdf
+\usepackage{charter}
+\usepackage[scaled=.92]{helvet}
+\usepackage{courier}
+
+% besseres Schriftbild
+% Doku: http://www.ctan.org/tex-archive/macros/latex/contrib/microtype/microtype.pdf
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+
+% Eigener Briefkopf
+\firsthead{
+
+%\includegraphics[width=0.9\textwidth]{sfgHead}
+\setlength{\unitlength}{1mm}
+\begin{picture}(0,35)
+\put(0,5){
+\includegraphics[width=1.3cm]{sfglogo}
+}
+
+\put(16,6){
+\includegraphics[width=7.5cm]{sfgHeadl}
+}
+
+\put(90.8,18.5){
+\includegraphics[width=7.5cm]{sfgHeadr}
+}
+\put(94,21){
+%\colorbox{green}{
+\parbox[t]{0.4\textwidth}{
+\scriptsize
+\sffamily
+\textit{
+  \begin{tabbing}
+Ruben Schwarz, Abteilungsleiter Tischtennis\\
+Hauptstr. 19/1, 75391 Gechingen\\
+\usekomavar*{emailseparator}: ruben@sfg-tischtennis.de
+  \end{tabbing}
+%}
+}
+}
+
+}
+\end{picture} \\%
+}
+
+\KOMAoptions{%
+% fromalign=center, % fromalign: Absenderadresse zentriert [Standard: linksb�ndig]
+% fromrule=below, % fromrule: below: unter Absender, aftername: Nach Absendernamen, false: keine Linie
+% parskip=half, % parskip: false: Absatzeinzug, full= Zeile Abstand zwischen Abs�tzen, half: halbe Zeile Abstand
+addrfield=true, % addrfield: true: Zieladresse anzeigen, false: Keine Empf�ngeradresse
+backaddress=false, % backaddress: Im Adressfeld Antwortadresse anzeigen: true / false
+% numericaldate=false, % numericaldate: Datum nur aus Zahlen: true/false
+% pagenumber=false, % pagenumber: botcenter: Fuss Mitte, botright: Fuss rechts, botleft: Fusslinks, gleiches auch in Kopfzeile: topcenter,...
+foldmarks=true % foldmarks: Falzzeichen true/false
+% fromphone=true, % fromphone: Absendertelefonnummer, true/false
+% fromemail=true, % fromemail: Absenderemailadresse, true/false
+% fromlogo=true
+}%
+
+
+
+% Formatoption f�r Briefe: andere m�gliche Einstellungen: KOMAold, DIN, DINmtex, SN, SNleft
+
+\setkomavar{fromname}{Ruben Schwarz} % Ihr Name 
+\setkomavar{fromaddress}{Hauptstr. 19/1\\ 75391 Gechingen} % Ihre Adresse
+\setkomavar{fromemail}{ruben@sfg-tischtennis.de} % Ihre E-Mail-Adresse
+\setkomavar{fromphone}{0176 21736130} % Ihre Telefonnummer
+\setkomavar{fromlogo}{\includegraphics{sfglogo}}
+\setkomavar{signature}{\includegraphics[width=4cm]{unterschrift}\\Ruben Schwarz} % Ihre Unterschrift
