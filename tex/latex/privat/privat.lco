@@ -1,0 +1,34 @@
+\ProvidesFile{privat.lco}
+
+%\renewcaptionname{german}\phonename{Telefon} 
+%\renewcaptionname{german}\mobilephonename{Mobiltelefon}
+
+\setkomafont{fromname}{\large} 
+\setkomafont{fromaddress}{\small}
+%\setkomafont{backaddress}{\small}
+
+
+
+\date{\today}
+\RequirePackage{pdfpages}
+\RequirePackage{hyperref}
+
+\KOMAoptions{%
+fromalign=center, % fromalign: Absenderadresse zentriert [Standard: linksb�ndig]
+fromrule=below, % fromrule: below: unter Absender, aftername: Nach Absendernamen, false: keine Linie
+parskip=half, % parskip: false: Absatzeinzug, full= Zeile Abstand zwischen Abs�tzen, half: halbe Zeile Abstand
+addrfield=true, % addrfield: true: Zieladresse anzeigen, false: Keine Empf�ngeradresse
+backaddress=true, % backaddress: Im Adressfeld Antwortadresse anzeigen: true / false
+numericaldate=false, % numericaldate: Datum nur aus Zahlen: true/false
+pagenumber=false, % pagenumber: botcenter: Fuss Mitte, botright: Fuss rechts, botleft: Fusslinks, gleiches auch in Kopfzeile: topcenter,...
+foldmarks=true, % foldmarks: Falzzeichen true/false
+fromphone=false, % fromphone: Absendertelefonnummer, true/false
+fromemail=true % fromemail: Absenderemailadresse, true/false
+}%
+
+
+\setkomavar{fromname}{Ruben Schwarz} % Ihr Name 
+\setkomavar{fromaddress}{Hauptstr. 19/1\\ 75391 Gechingen} % Ihre Adresse
+\setkomavar{fromemail}{\href{mailto:schwarzruben@gmail.com}{schwarzruben@gmail.com}} % Ihre E-Mail-Adresse
+\setkomavar{fromphone}{0176 21736130} % Ihre Telefonnummer
+\setkomavar{signature}{Ruben Schwarz} % Ihre Unterschrift
