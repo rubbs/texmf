@@ -31,4 +31,4 @@ fromemail=true % fromemail: Absenderemailadresse, true/false
 \setkomavar{fromaddress}{Hauptstr. 19/1\\ 75391 Gechingen} % Ihre Adresse
 \setkomavar{fromemail}{\href{mailto:schwarzruben@gmail.com}{schwarzruben@gmail.com}} % Ihre E-Mail-Adresse
 \setkomavar{fromphone}{0176 21736130} % Ihre Telefonnummer
-\setkomavar{signature}{Ruben Schwarz} % Ihre Unterschrift
+\setkomavar{signature}{\includegraphics[width=4cm]{unterschrift}\\Ruben Schwarz} % Ihre Unterschrift

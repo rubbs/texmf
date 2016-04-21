@@ -40,6 +40,12 @@
 \includegraphics[width=1.3cm]{sfglogo}
 }
 
+\put(14,23){
+\sffamily
+\large \bfseries
+Sportfreunde Gechingen 1921 e.V.
+}
+
 \put(16,6){
 \includegraphics[width=7.5cm]{sfgHeadl}
 }
@@ -54,7 +60,7 @@
 \sffamily
 \textit{
   \begin{tabbing}
-Ruben Schwarz, Abteilungsleiter Tischtennis\\
+Ruben Schwarz, 1. Vorsitzender\\
 Hauptstr. 19/1, 75391 Gechingen\\
 \usekomavar*{emailseparator}: schwarzruben@gmail.com
   \end{tabbing}
@@ -68,10 +74,10 @@ Hauptstr. 19/1, 75391 Gechingen\\
 
 \KOMAoptions{%
 % fromalign=center, % fromalign: Absenderadresse zentriert [Standard: linksb�ndig]
-% fromrule=below, % fromrule: below: unter Absender, aftername: Nach Absendernamen, false: keine Linie
-% parskip=half, % parskip: false: Absatzeinzug, full= Zeile Abstand zwischen Abs�tzen, half: halbe Zeile Abstand
+% fromrule=aftername, % fromrule: below: unter Absender, aftername: Nach Absendernamen, false: keine Linie
+parskip=half, % parskip: false: Absatzeinzug, full= Zeile Abstand zwischen Abs�tzen, half: halbe Zeile Abstand
 addrfield=true, % addrfield: true: Zieladresse anzeigen, false: Keine Empf�ngeradresse
-backaddress=false, % backaddress: Im Adressfeld Antwortadresse anzeigen: true / false
+backaddress=true, % backaddress: Im Adressfeld Antwortadresse anzeigen: true / false
 % numericaldate=false, % numericaldate: Datum nur aus Zahlen: true/false
 % pagenumber=false, % pagenumber: botcenter: Fuss Mitte, botright: Fuss rechts, botleft: Fusslinks, gleiches auch in Kopfzeile: topcenter,...
 foldmarks=true % foldmarks: Falzzeichen true/false
@@ -80,13 +86,17 @@ foldmarks=true % foldmarks: Falzzeichen true/false
 % fromlogo=true
 }%
 
-
-
-% Formatoption f�r Briefe: andere m�gliche Einstellungen: KOMAold, DIN, DINmtex, SN, SNleft
+\setkomavar{frombank}{\sffamily www.sportfreunde-gechingen.de}
+\setkomavar{firstfoot}{%
+\parbox[b]{\linewidth}{%
+\centering\usekomavar{frombank}%
+}%
+}
 
 \setkomavar{fromname}{Ruben Schwarz} % Ihr Name 
 \setkomavar{fromaddress}{Hauptstr. 19/1\\ 75391 Gechingen} % Ihre Adresse
-\setkomavar{fromemail}{ruben@sfg-tischtennis.de} % Ihre E-Mail-Adresse
+\setkomavar{fromemail}{schwarzruben@gmail.com} % Ihre E-Mail-Adresse
 \setkomavar{fromphone}{0176 21736130} % Ihre Telefonnummer
 \setkomavar{fromlogo}{\includegraphics{sfglogo}}
-\setkomavar{signature}{\includegraphics[width=4cm]{unterschrift}\\Ruben Schwarz} % Ihre Unterschrift
+%\setkomavar{signature}{\includegraphics[width=4cm]{unterschrift}\\Ruben Schwarz} % Ihre Unterschrift
+\setkomavar{signature}{\\[1em] Ruben Schwarz} % Ihre Unterschrift

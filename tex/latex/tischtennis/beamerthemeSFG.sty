@@ -53,16 +53,35 @@
 %\usepackage[no-math]{fontspec}
 \usepackage{etoolbox}
 \usepackage{tikz}
+\usepackage{graphicx}
 
 \usetikzlibrary{backgrounds}
 
-\usecolortheme{metropolis}
+%\usecolortheme{metropolis}
 %\usefonttheme{metropolis}
 
+\definecolor{mDarkBrown}{HTML}{DDDDDD}
+\definecolor{mDarkTeal}{HTML}{555555}
+
+\definecolor{mLightBrown}{HTML}{AAAAAA}
+\definecolor{mMediumBrown}{HTML}{666666}
+
+\setbeamercolor{background canvas}{bg=black!2}
+\setbeamercolor{normal text}{fg=mDarkTeal}
+\setbeamercolor{alerted text}{fg=mLightBrown}
+\setbeamercolor{structure}{fg=mDarkTeal}
+\setbeamercolor{palette primary}{fg=mDarkBrown}
+\setbeamercolor{palette secondary}{fg=mDarkBrown}
+\setbeamercolor{palette tertiary}{fg=white, bg=mMediumBrown}
+\setbeamercolor{palette quaternary}{fg=white, bg=mDarkTeal}
+\setbeamercolor{frametitle}{parent=palette quaternary}
+
+\setbeamercolor{page number in head/foot}{fg=mDarkTeal}
 
 %}}}
 %{{{ --- Font ----------------------
 \setbeamerfont{section title}{family=\sffamily, size=\Large}
+\setbeamerfont{description item}{family=\sffamily, series=\bf}
 
 %}}}
 %{{{ --- Options ----------------------
@@ -75,41 +94,35 @@
 %}}}
 %{{{ --- Titlepage --------------------
 
-\def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
+\pgfdeclareimage[width=0.65\paperwidth]{mybackground}{logo.png}
 
+\def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
 \def\titlepage{\usebeamertemplate{title page}}
 \setbeamertemplate{title page}
 {
+  \begin{picture}(0,0)
+    
+    \put(150,-165){%
+      \pgfuseimage{mybackground}
+    }
+
+  \end{picture}
+  
   \begin{minipage}[b][\paperheight]{\textwidth}
-    \vfill
-    \ifx\inserttitle\@empty%
-    \else%
-    {\raggedright\linespread{0.8}\usebeamerfont{title}\usebeamercolor[fg]{title}\scshape\MakeLowercase{\inserttitle}\par}%
-    \vspace*{0.5em}
-    \fi%
-    \ifx\insertsubtitle\@empty%
-    \else%
-    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-    \vspace*{0.5em}
-    \fi%
+    {
+      \usebeamerfont{title}\usebeamercolor[fg]{title}
+      \inserttitle\par
+    }
     \begin{tikzpicture}\draw[mLightBrown] (0, 0) -- (\textwidth, 0);\end{tikzpicture}%
-    \vspace*{0.5em}
-    \ifx\insertauthor\@empty%
-    \else%
-    {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par}%
-    \vspace*{0.25em}
-    \fi%
-    \ifx\insertdate\@empty%
-    \else%
-    {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
-    \fi%
-    \ifx\insertinstitut\@empty%
-    \else%
-    \vspace*{3mm}
-    {\usebeamerfont{institute}\usebeamercolor[fg]{institute}\insertinstitute\par}%
-    \fi%
-    \vfill
-    \vspace*{5mm}
+    {
+      \usebeamerfont{date}\usebeamercolor[fg]{date}
+      \insertdate\par
+    }
+    {
+      \usebeamerfont{author}\usebeamercolor[fg]{author}
+      \insertauthor\par
+    }
+    \vspace*{3cm}
   \end{minipage}
 }
 
@@ -139,6 +152,9 @@
     \begin{tikzpicture}[tight background]
 
       \node[anchor=west, white, inner sep=0pt] at (0pt, 0pt) {\insertsectionHEAD};
+      \node[anchor=west, white, inner sep=0pt] at (210pt, 0pt) {
+        \includegraphics[height=0.6cm]{sfg-logo-inv}
+      };
 
       \draw[anchor=west, mDarkBrown, fill=mDarkBrown, inner sep=0pt]
       (2pt, -16pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
@@ -215,8 +231,10 @@
 %{{{ --- Frametitle -------------------
 \setbeamertemplate{frametitle}{%
 \nointerlineskip
-\begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,ht=2.5ex,dp=1.5ex]{frametitle}
+\begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,ht=3ex,dp=1.5ex]{frametitle}
   \usebeamerfont{frametitle}{\insertframetitle}%
+  \hfill
+  \includegraphics[height=0.6cm]{sfg-logo-inv}
 \end{beamercolorbox}
 }
 %}}}
