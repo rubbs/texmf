@@ -1,0 +1,13 @@
+%Briefvorlage für SFG Briefe
+
+\ProvidesFile{sfg-brief-unterschrift.lco}
+
+\LoadLetterOption{sfg-brief}
+
+%\setkomavar{signature}{\includegraphics[width=4cm]{unterschrift}\\Ruben Schwarz} % Ihre Unterschrift
+\setkomavar{signature}{
+\begin{minipage}{5cm}
+\includegraphics[width=4cm]{unterschrift}\\
+    Ruben Schwarz\\[0.2em]\tiny{1. Vorsitzender}\\\tiny{Sf Gechingen 1921 e.V.}    
+  \end{minipage}
+} % Ihre Unterschrift

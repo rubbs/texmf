@@ -99,4 +99,10 @@ foldmarks=true % foldmarks: Falzzeichen true/false
 \setkomavar{fromphone}{0176 21736130} % Ihre Telefonnummer
 \setkomavar{fromlogo}{\includegraphics{sfglogo}}
 %\setkomavar{signature}{\includegraphics[width=4cm]{unterschrift}\\Ruben Schwarz} % Ihre Unterschrift
-\setkomavar{signature}{\\[1em] Ruben Schwarz} % Ihre Unterschrift
+\setkomavar{signature}{
+\begin{minipage}{5cm}
+\vspace*{1cm}
+%\includegraphics[width=4cm]{unterschrift}\\
+    Ruben Schwarz\\[0.2em]\tiny{1. Vorsitzender}\\\tiny{Sf Gechingen 1921 e.V.}    
+  \end{minipage}
+} % Ihre Unterschrift
